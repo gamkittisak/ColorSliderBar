@@ -17,7 +17,7 @@ void setup(){
 void draw(){
   background(123,58,105);
   c.updateSlider();
-  c2.setColor(c.getColor());
+  c2.setHue(c.getColor());
   c2.setBrightness(c3.getColor());
   c2.updateSlider();
   c3.updateSlider();

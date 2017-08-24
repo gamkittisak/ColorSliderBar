@@ -25,7 +25,7 @@ final class Saturation extends ColorSlider{
   public void createColor(){
    float lenghtColor = map(sliderWidth,0,sliderWidth,0,256);
   for(int i=0;i<(int)lenghtColor;i++){
-      stroke(getColor(),i,brightness);
+      stroke(getHue(),i,brightness);
       line(positionX+i,positionY,positionX+i,sliderHeight+positionY);
     }
   }
@@ -54,17 +54,15 @@ final class Saturation extends ColorSlider{
        int r =(int)red(get().pixels[mouseX + mouseY * width]);
        int g = (int)green(get().pixels[mouseX+mouseY*width]);
        int b = (int)blue(get().pixels[mouseX+mouseY*width]);
-       println(r,g,b);
        setColor(r,g,b);
   }
   
   private void iconCurSorOnslider(int positionX,int positionY){
-      //noStroke();
       stroke(255);
       float start =this.positionX+positionX; //eazy reading (old position + new position) from MousePressed
       int w =15;
       int h = 40;
-      fill(getColor(),color_,brightness); 
+      fill(getHue(),color_,brightness); 
       setColor(this.color_);
       rect(start-w/2,positionY-4,w,h);
   }

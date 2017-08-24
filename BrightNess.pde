@@ -26,7 +26,6 @@ final class BrightNess extends ColorSlider{
      }
      
      void iconCurSorOnslider(int positionX,int positionY){
-      //noStroke();
       stroke(255);
       float start =this.positionX+positionX; //eazy reading (old position + new position) from MousePressed
       int w =15;

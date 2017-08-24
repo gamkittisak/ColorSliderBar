@@ -31,12 +31,12 @@ final class Hue extends ColorSlider{
     iconCurSorOnslider((int)mouseOnSlider(),positionY);
   }
   
-  //for 
   private float mouseOnSlider(){
        if(mousePressed && mouseX>positionX && mouseX< ((positionX+sliderWidth)-3) && mouseY>positionY
     && mouseY<positionY+sliderHeight){  
       float target = mouseX - positionX;  
       color_=map(target,0.0,sliderWidth,0.0,256.0);
+      setHue(color_);
       pickColor();
       
     }
@@ -54,7 +54,6 @@ final class Hue extends ColorSlider{
   
   //OverrideMethod
   public void createColor(){
-    //translate(positionX,positionY);
   float lenghtColor = map(sliderWidth,0,sliderWidth,0,256);
   for(int i=0;i<(int)lenghtColor;i++){
       stroke(i,saturation,brightness);
@@ -63,7 +62,6 @@ final class Hue extends ColorSlider{
   }
   
   void iconCurSorOnslider(int positionX,int positionY){
-      //noStroke();
       stroke(255);
       float start =this.positionX+positionX; //eazy reading (old position + new position) from MousePressed
       int w =15;
